@@ -20,7 +20,7 @@ const ForgetPassword: React.FC = () => {
 
 
     const handle = () => {
-        
+        //put 
     }
 
     return (<Container maxWidth="xs">
@@ -31,7 +31,7 @@ const ForgetPassword: React.FC = () => {
       <Box component="form" onSubmit={handle} mt={3}>
         <TextField label="username" margin="normal" required fullWidth autoComplete="name" onChange={(e) => setUsername(e.target.value)} value={username} autoFocus />
         <TextField label="Email Address" margin="normal" required fullWidth autoComplete="email" onChange={(e) => setEmail(e.target.value)} value={email}/>
-        <LoadingButton type="submit" variant="contained" loading={loading} sx={{ mt: 4, mb: 3 }}>Register</LoadingButton>
+        <LoadingButton type="submit" variant="contained" loading={loading} sx={{ mt: 4, mb: 3 }}>Reset Passord</LoadingButton>
         <Button component={RouterLink} variant="text" to='/login' sx={{ mt: 4, mb: 3 }} >Cancel</Button>
         <FormHelperText>{message}</FormHelperText>
       </Box>
