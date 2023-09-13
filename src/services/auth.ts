@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const USER_API_URL = "http://localhost:9000/user/";
+// const USER_API_URL = "http://localhost:9000/user/";
 // const USER_API_URL = "https://9429d5b9-a4ce-43d8-bf6b-637cc223febe.mock.pstmn.io/";
+const url = "https://sde-backend-40b2c0bbfd8e.herokuapp.com/api/";
 
 const register = (username: string, email: string, password: string) => {
-  return axios.post(USER_API_URL + "signup", {
+  return axios.post(url + "signup", {
     username,
     email,
     password,
@@ -13,7 +14,7 @@ const register = (username: string, email: string, password: string) => {
 
 const login = (username: string, password: string) => {
   return axios
-    .post(USER_API_URL + "login", {
+    .post(url + "login", {
       username,
       password,
     })
@@ -29,7 +30,7 @@ const login = (username: string, password: string) => {
 
 const logout = () => {
   localStorage.removeItem("user");
-  return axios.post(USER_API_URL + "logout").then((response) => {
+  return axios.post(url + "logout").then((response) => {
     return response.data;
   });
 };
@@ -40,6 +41,11 @@ const getCurrentUser = (): any | null => {
   return user ? JSON.parse(user) : null;
 };
 
+const reset = (email: string) => {
+  return axios.post(url + "password-reset-link", { email }).then((response) => {
+    return response.data;
+  });
+}
 
 
 /**
@@ -63,6 +69,7 @@ const fakeAuthProvider = {
     login,
     logout,
     getCurrentUser,
+    reset,
     fakeAuthProvider,
   }
   
