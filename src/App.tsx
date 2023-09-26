@@ -6,6 +6,7 @@ import RegistrationPage from './pages/login/RegistrationPage';
 import Home from './pages/Home';
 import './stylesheets/App.css';
 import ForgetPassword from './pages/login/ForgetPassword';
+import ResetPassword from './pages/login/ResetPassword';
 // import { fakeAuthProvider } from "./auth";
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="*" element={<LoginPage/>} />
           <Route path='/forgot-password' element={<ForgetPassword />} />
+          <Route path='/password-reset' element={<ResetPassword />} />
         </Routes>
       </Router>
   );
