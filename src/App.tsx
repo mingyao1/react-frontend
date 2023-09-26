@@ -18,7 +18,7 @@ const App: React.FC = () => {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="*" element={<LoginPage/>} />
           <Route path='/forgot-password' element={<ForgetPassword />} />
-          <Route path='/password-reset' element={<ResetPassword />} />
+          <Route path='/password-reset/:token' element={<ResetPassword />} />
         </Routes>
       </Router>
   );

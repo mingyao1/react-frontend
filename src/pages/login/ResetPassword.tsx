@@ -21,11 +21,13 @@ const ResetPassword: React.FC = () => {
 
     const navigate = useNavigate();
     const defaultToken = '';
-    const { token } = useParams<{ token: string }>();
+    const {token} = useParams<{ token: string }>();
     console.log(token)
     const handleToken = token ?? defaultToken;
+    
 
     const handleSubmit = (event: FormEvent) => {
+        
         event.preventDefault();
         // Add your registration logic here
         AuthService.resetPassword(handleToken, password).then(
